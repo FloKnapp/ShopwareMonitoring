@@ -1,0 +1,30 @@
+{
+    "name": "floknapp/shopware6-new-relic-monitoring",
+    "description": "Simple monitoring plugin",
+    "version": "v1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "AGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Florian Knapp",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "shopware/core": "6.3.*",
+        "guzzlehttp/guzzle": "6.5.*"
+    },
+    "extra": {
+        "shopware-plugin-class": "Moshp\\Monitoring\\MoshpMonitoring",
+        "plugin-icon": "Resources/config/plugin.png",
+        "label": {
+            "de-DE": "Monitoring Plugin",
+            "en-GB": "Monitoring plugin"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Moshp\\Monitoring\\": "src/"
+        }
+    }
+}

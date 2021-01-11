@@ -1,0 +1,11 @@
+parameters:
+    new_relic.endpoint: 'https://metric-api.eu.newrelic.com/metric/v1'
+    new_relic.api_key: ''
+
+services:
+    Moshp\Monitoring\Services\MetricService:
+        arguments: [ '@shopware.app_system.guzzle', '@monolog.logger', '%new_relic.api_key%', '%new_relic.endpoint%' ]
+    Moshp\Monitoring\Subscriber\MetricSubscriber:
+        arguments: ['@Moshp\Monitoring\Services\MetricService']
+        tags:
+            - {name: kernel.event_subscriber}
