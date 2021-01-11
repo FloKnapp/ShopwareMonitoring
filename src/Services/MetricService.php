@@ -67,20 +67,18 @@ class MetricService
                 ]
             ]]);
 
-            $this->logger->info('Sending json: ' . $body);
-
             $req = $this->client->request('POST', $this->apiEndpoint, [
                 'headers' => [
-                    'Api-Key' => $this->apiKey,
+                    'Api-Key'      => $this->apiKey,
                     'Content-Type' => 'application/json',
-                    'User-Agent' => 'curl/7.65.3'
+                    'User-Agent'   => 'curl/7.65.3'
                 ],
                 'body' => $body
             ]);
 
             if (self::METRIC_SUCCESS_CODE !== $req->getStatusCode()) {
 
-                $this->logger->notice('Error while sending metric data to NewRelic.', [
+                $this->logger->warning('Error while sending metric data to NewRelic.', [
                     'response' => (string)$req->getBody()
                 ]);
 
@@ -93,7 +91,6 @@ class MetricService
         } catch (\Exception $e) {
             $this->logger->error($e->getMessage());
         }
-
     }
 
 }

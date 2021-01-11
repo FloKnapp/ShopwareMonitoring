@@ -20,7 +20,7 @@ class MoshpMonitoring extends Plugin
         $apiKey = $container->getParameter('new_relic.api_key');
 
         if (empty($apiKey)) {
-            throw new \InvalidArgumentException('Missing api key for NewRelic.');
+            throw new \InvalidArgumentException('Missing api key for NewRelic Insights.');
         }
 
     }

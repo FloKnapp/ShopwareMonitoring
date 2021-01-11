@@ -1,12 +1,12 @@
 {
     "name": "floknapp/shopware6-new-relic-monitoring",
-    "description": "Simple monitoring plugin",
+    "description": " Plugin for Shopware 6 to measure the application response times ",
     "version": "v1.0.0",
     "type": "shopware-platform-plugin",
     "license": "AGPL-3.0-or-later",
     "authors": [
         {
-            "name": "Florian Knapp",
+            "name": "Flo Knapp",
             "role": "Developer"
         }
     ],

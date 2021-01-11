@@ -42,7 +42,7 @@ class MetricSubscriber implements EventSubscriberInterface
      */
     public function requestEvent(RequestEvent $requestEvent)
     {
-        if (!$requestEvent->isMasterRequest()) {
+        if (false === $requestEvent->isMasterRequest()) {
             return;
         }
 
